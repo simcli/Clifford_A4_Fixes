@@ -24,7 +24,7 @@ namespace Lab5
          */
         // Constant to display name
         const string PROGRAMMER = "Yassine Adaam Ammantoola";
-        int loginAttempts1 = 0;
+        int loginAttempts = 0;
 
         //Function to get random number from minimum to maximum
         public static int GetRandom(int min, int max)
@@ -93,8 +93,8 @@ namespace Lab5
         {
             if (radText.Checked == true)
             {
-                grpText.Visible = false;
-                grpStats.Visible = true;
+                grpText.Visible = true;
+                grpStats.Visible = false;
                 ResetStatsGrp();
             }
             if (radStats.Checked == true)
@@ -221,7 +221,7 @@ namespace Lab5
         {
             int i = 0;
             int sum = 0;
-            while(i > lstNumbers.Items.Count)
+            while(i < lstNumbers.Items.Count)
             {
                 sum += Convert.ToInt32(lstNumbers.Items[i]);
                 lblSum.Text = String.Format("{0:n0}", sum).ToString();
